@@ -85,11 +85,11 @@ def spider(urls,func,thread_num):
 
 
 #获取各个投诉界面的信息(有问题，未解决)
-spider(data[0],cases,1000)
-while (len(cases_wrong_url) > 1):
+spider(data[0],cases,10)
+while (len(cases_wrong_url) > 20000):
     print("left:{}".format(len(cases_wrong_url)))
-    spider(cases_wrong_url,cases,1000)
+    spider(cases_wrong_url,cases,10)
 
-cases = pd.DataFrame(cases)
+cases_data = pd.DataFrame(cases_data)
 
 cases.to_excel(r"D:/finial_BITCH.xlsx")
